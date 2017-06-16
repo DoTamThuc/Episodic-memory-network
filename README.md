@@ -20,6 +20,21 @@ The implementation contain three module:
 
 This will describe each task and show how to run the model on each task. 
 
+### Prerequisites
+
+Things you need to install before go further
+
+```
+python 3.6
+theano
+json
+pickle
+numpy
+```
+CAUTION: 
+* The parameters of model was saved in pickle format with python 3.6, so if you use python 2.7, you should train again the model using difference path.
+* You should provide the permission for the shell bash code ** run.sh **
+
 ### Task 1
 
 In task 1, the model have to answer where is the person given the list of facts, and there are 1 supporting fact for the answer. The model achieve 99.99% accuracy on this task.
@@ -71,6 +86,12 @@ The machine read story the seccond time and gennerate the attention score for ea
 ['0.998', '0.002']
 The machine read story the third time and gennerate the attention score for each sentence as below: ...
 ['0.564', '0.436']
+```
+
+The task canbe train again using the command:
+
+```
+./run.sh --task=qa1 --mode=TRAIN --data_path=**your/preferred/model/path/here/**
 ```
 
 
