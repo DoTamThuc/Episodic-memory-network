@@ -155,7 +155,7 @@ the input the question
 Where is the milk
 ```
 
-The task canbe train again using the command (recommend for python 2.7 users):
+The task can be train again using the command (recommend for python 2.7 users):
 
 ```
 ./run.sh --task=qa2 --mode=TRAIN --data_path=your/preferred/model/path/here/
