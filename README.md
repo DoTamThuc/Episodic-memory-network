@@ -33,7 +33,7 @@ numpy
 ```
 CAUTION: 
 * The parameters of model was saved in pickle format with python 3.6, so if you use python 2.7, you should train again the model using difference path.
-* You should provide the permission for the shell bash code ** run.sh **
+* You should provide the permission for the shell bash code __ run.sh __
 
 ### Task 1
 
@@ -86,12 +86,13 @@ The machine read story the seccond time and gennerate the attention score for ea
 ['0.998', '0.002']
 The machine read story the third time and gennerate the attention score for each sentence as below: ...
 ['0.564', '0.436']
+Then machine answer: hallway
 ```
 
-The task canbe train again using the command:
+The task canbe train again using the command (recommend for python 2.7 users):
 
 ```
-./run.sh --task=qa1 --mode=TRAIN --data_path=**your/preferred/model/path/here/**
+./run.sh --task=qa1 --mode=TRAIN --data_path=__your/preferred/model/path/here/__
 ```
 
 
