@@ -33,7 +33,7 @@ numpy
 ```
 CAUTION: 
 * The parameters of model was saved in pickle format with python 3.6, so if you use python 2.7, you should train again the model using difference path.
-* You should provide the permission for the shell bash code __ run.sh __
+* You should provide the permission for the shell bash code ** run.sh **
 
 ### Task 1
 
@@ -55,7 +55,7 @@ Examples of the task:
 ```
 Note: the list of facts can expand to 15
 
-To play with the trained model just run the command:
+To play with the trained model just run the command for the task "qa1":
 
 ```
 ./run.sh --task=qa1 --mode=PLAY
@@ -63,10 +63,10 @@ To play with the trained model just run the command:
 OUTPUT: 
 Only use words in this list, other word might give different result: [u'hallway', u'bathroom', u'John', u'garden', u'office', u'is', u'Sandra', u'moved', u'back', u'Mary', u'PADDING', u'to', u'Daniel', u'bedroom', u'went', u'journeyed', u'Where', u'the', u'travelled', u'kitchen']
 
-Please input evidence sentences separate by '; ' inpput 'END' for stop:
+Please input evidence sentences separated by '; ' inpput 'END' for stop:
 ```
 
-You can input the facts: 
+You can input the facts, note that the model was trained only on the printed vocabulary. So no dot "." or question mark "?" are included.
 ```
 John travelled to the hallway; Mary journeyed to the bathroom
 ```
@@ -92,7 +92,73 @@ Then machine answer: hallway
 The task canbe train again using the command (recommend for python 2.7 users):
 
 ```
-./run.sh --task=qa1 --mode=TRAIN --data_path=__your/preferred/model/path/here/__
+./run.sh --task=qa1 --mode=TRAIN --data_path=your/preferred/model/path/here/
+```
+
+CAUTION: For python 2.7, the input facts and question should be quoted
+
+```
+"John travelled to the hallway; Mary journeyed to the bathroom"
+```
+and
+```
+"Where is John"
+```
+
+### Task 2
+
+The task 2 is nearly the same as task 1 but there are two supporting facts and list of facts is much longer
+
+Examples of the task:
+
+```
+1 Mary got the milk there.
+2 John moved to the bedroom.
+3 Sandra went back to the kitchen.
+4 Mary travelled to the hallway.
+5 Where is the milk? 	hallway	1 4
+6 John got the football there.
+7 John went to the hallway.
+8 Where is the football? 	hallway	6 7
+9 John put down the football.
+10 Mary went to the garden.
+11 Where is the football? 	hallway	9 7
+12 John went to the kitchen.
+13 Sandra travelled to the hallway.
+14 Where is the football? 	hallway	9 7
+15 Daniel went to the hallway.
+16 Mary discarded the milk.
+17 Where is the milk? 	garden	16 10
+```
+
+Run the command as above but with task "qa2":
+
+```
+./run.sh --task=qa2 --mode=PLAY
+
+OUTPUT: 
+
+Only use words in this list, other word might give different result ['PADDING', 'Daniel', 'John', 'Mary', 'Sandra', 'Where', 'apple', 'back', 'bathroom', 'bedroom', 'discarded', 'down', 'dropped', 'football', 'garden', 'got', 'grabbed', 'hallway', 'is', 'journeyed', 'kitchen', 'left', 'milk', 'moved', 'office', 'picked', 'put', 'the', 'there', 'to', 'took', 'travelled', 'up', 'went']
+Please input evidence sentences separated by '; ' inpput 'END' for stop:
+```
+
+Let input list of facts: Mary got the milk there; John moved to the bedroom; Sandra went back to the kitchen; Mary travelled to the hallway
+
+```
+Please input evidence sentences separated by '; ' inpput 'END' for stop: Mary got the milk there; John moved to the bedroom; Sandra went back to the kitchen; Mary travelled to the hallway
+
+```
+
+the input the question
+
+```
+Where is the milk
+```
+
+The task canbe train again using the command (recommend for python 2.7 users):
+
+```
+./run.sh --task=qa2 --mode=TRAIN --data_path=your/preferred/model/path/here/
 ```
 
 
