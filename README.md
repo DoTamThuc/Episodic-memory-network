@@ -1,5 +1,5 @@
-# Episodic-memory-network
-Implementation of Dynamic Memory Networks in Theano introduced in https://arxiv.org/abs/1603.01417
+# Attention-memory-network
+Implementation of Dynamic(Attention base) Memory Networks in Theano introduced in https://arxiv.org/abs/1603.01417
 
 I consider the implementation as a self learning process, the code was written as the time I was learning Theano. I finish it after 2 weeks. All the training process and experiment was conducted on my laptop with only CPU, I do not have a GPU to test it. 
 
